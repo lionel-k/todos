@@ -1,1 +1,4 @@
-<li>Title: <%= todo.title %></li>
+<li class="<%= 'completed' if todo.completed? %>">
+  Title: <%= todo.title %>
+  <p><%= button_to 'Mark complete', complete_todo_path(todo) %></p>
+</li>
