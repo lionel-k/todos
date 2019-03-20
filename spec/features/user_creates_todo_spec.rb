@@ -4,10 +4,8 @@ feature 'User creates todo' do
   scenario 'successfully' do
     sign_in
 
-    click_link 'Add a new todo'
-    fill_in 'Title', with: 'Wash Clothes'
-    click_on 'Create Todo'
+    create_todo('Wash Clothes')
 
-    expect(page).to have_css '.todos li', text: 'Wash Clothes'
+    expect(page).to show_todo('Wash Clothes')
   end
 end

@@ -5,6 +5,7 @@ feature 'User sees own todos' do
     Todo.create(title: 'Read a book')
 
     sign_in_as 'someone_else@mail.com'
-    expect(page).to_not have_css '.todos li', text: 'Read a book'
+
+    expect(page).to_not show_todo('Read a book')
   end
 end
