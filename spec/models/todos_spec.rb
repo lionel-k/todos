@@ -31,8 +31,8 @@ describe Todos do
       todo = Todo.create(title: 'Watch movie')
 
       todo.complete!
+      todo.mark_incomplete!
       todo.reload
-      todo.incomplete!
 
       expect(todo).to_not be_completed
     end
